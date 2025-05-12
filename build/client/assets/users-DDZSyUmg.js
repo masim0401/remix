@@ -1,0 +1,1 @@
+import{j as r,O as s}from"./index-BhZxhB74.js";import{B as e}from"./breadcrumbs-item-q1lDklfV.js";const m={breadcrumb:()=>r.jsx(e,{children:"Users"})};function o(){return r.jsx(s,{})}export{o as default,m as handle};
