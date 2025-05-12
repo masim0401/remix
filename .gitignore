@@ -1,0 +1,6 @@
+my-remix-app/node_modules
+
+/.cache
+/build
+.env
+.idea
