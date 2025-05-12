@@ -1,6 +1,5 @@
 {
   "name": "remix-test",
-  "homepage": "https://masim0401.github.io/remix",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -9,8 +8,7 @@
     "dev": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/server/index.js",
-    "typecheck": "tsc",
-    "deploy": "gh-pages -d public"
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@remix-run/node": "^2.16.5",
