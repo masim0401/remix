@@ -2,7 +2,7 @@ const config = {
 	appDirectory: "app",
 	assetsBuildDirectory: "public/build",
 	publicPath: "/remix/build/",
-	serverBuildPath: "build/index.js",
+	serverBuildPath: "build/server/index.js",
 	serverModuleFormat: "esm",
 };
 

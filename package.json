@@ -1,5 +1,6 @@
 {
   "name": "remix-test",
+  "homepage": "https://masim0401.github.io/remix",
   "private": true,
   "sideEffects": false,
   "type": "module",
