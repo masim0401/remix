@@ -1,10 +1,12 @@
 import {Links, Meta, Outlet, Scripts} from "@remix-run/react";
 import type {LinksFunction} from "@remix-run/node";
 
+
 import "./tailwind.css";
 import {Sidebar} from "./components/sidebar/sidebar";
 import {Breadcrumbs} from "./components/breadcrumbs/breadcrumbs";
 import {BreadcrumbsItem} from "./components/breadcrumbs/breadcrumbs-item";
+import {AppProvider} from "~/context/app-context";
 
 export const handle = {
 	breadcrumb: () => <BreadcrumbsItem>Dashboard</BreadcrumbsItem>,
@@ -32,21 +34,23 @@ export default function App() {
 			<Links/>
 		</head>
 		<body>
-		<div className='h-screen p-2'>
-			<div className="flex gap-2 h-full">
-				<div className='max-h-full bg-blue-300 rounded-2xl w-44 p-1 pt-3'>
-					<div className='h-full w-full overflow-y-auto p-1'>
-						<Sidebar/>
+		<AppProvider>
+			<div className='h-screen p-2'>
+				<div className="flex gap-2 h-full">
+					<div className='max-h-full bg-blue-300 rounded-2xl w-44 p-1 pt-3'>
+						<div className='h-full w-full overflow-y-auto p-1'>
+							<Sidebar/>
+						</div>
 					</div>
-				</div>
-				<div className='bg-blue-400 h-full rounded-2xl w-full p-2'>
-					<div className='h-full w-full overflow-y-auto p-2'>
-						<Breadcrumbs/>
-						<Outlet/>
+					<div className='bg-blue-400 h-full rounded-2xl w-full p-2'>
+						<div className='h-full w-full overflow-y-auto p-2'>
+							<Breadcrumbs/>
+							<Outlet/>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</AppProvider>
 		<Scripts/>
 		</body>
 		</html>

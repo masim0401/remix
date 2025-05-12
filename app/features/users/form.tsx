@@ -1,5 +1,6 @@
-// components/UserForm.tsx
-import {Form, useNavigation} from "@remix-run/react";
+import {Form} from "@remix-run/react";
+import {useAppContext} from "~/context/app-context";
+import {useEffect} from "react";
 
 interface UserFormProps {
 	defaultName?: string;
@@ -16,6 +17,21 @@ export default function UserForm({
 																	 success,
 																	 isSubmitting,
 																 }: UserFormProps) {
+
+	console.log(error, success);
+
+	const {setLastEditUser} = useAppContext()
+
+	useEffect(() => {
+		if (success && defaultName && defaultEmail) {
+			setLastEditUser({
+				name: defaultName,
+				email: defaultEmail,
+			});
+			console.log("✅ Saved to context:", defaultName, defaultEmail);
+		}
+	}, [success, defaultName, defaultEmail, setLastEditUser]);
+
 	return (
 		<div>
 			<h3 className="text-lg font-semibold mb-4">
@@ -33,7 +49,6 @@ export default function UserForm({
 						defaultValue={defaultName}
 						className="mt-1 block p-2 w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
 						minLength={2}
-						required
 					/>
 				</div>
 				<div>
@@ -46,7 +61,6 @@ export default function UserForm({
 						name="email"
 						defaultValue={defaultEmail}
 						className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-						required
 					/>
 				</div>
 				{error && <p className="text-red-500 text-sm">{error}</p>}
