@@ -10,7 +10,7 @@ export async function loader() {
 			return await res.json();
 		});
 
-	return defer({ users: usersPromise });
+	return { users: usersPromise };
 }
 
 export default function UsersList() {
