@@ -1,4 +1,4 @@
-import {Form} from "@remix-run/react";
+import {Form, useParams} from "@remix-run/react";
 import {useAppContext} from "~/context/app-context";
 import {useEffect} from "react";
 
@@ -21,14 +21,15 @@ export default function UserForm({
 	console.log(error, success);
 
 	const {setLastEditUser} = useAppContext()
+	const {id} = useParams();
 
 	useEffect(() => {
 		if (success && defaultName && defaultEmail) {
 			setLastEditUser({
 				name: defaultName,
 				email: defaultEmail,
+				id: parseInt(id!)
 			});
-			console.log("✅ Saved to context:", defaultName, defaultEmail);
 		}
 	}, [success, defaultName, defaultEmail, setLastEditUser]);
 

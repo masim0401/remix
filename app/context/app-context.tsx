@@ -1,8 +1,8 @@
 import {createContext, useContext, useState, ReactNode, Dispatch, SetStateAction} from "react";
 
 type AppContextType = {
-	lastEditUser: {name: string; email: string};
-	setLastEditUser: Dispatch<SetStateAction<{name: string; email: string}>>;
+	lastEditUser: {name: string; email: string; id: number};
+	setLastEditUser: Dispatch<SetStateAction<{name: string; email: string; id: number}>>;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -10,7 +10,8 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export function AppProvider({ children }: { children: ReactNode }) {
 	const [lastEditUser, setLastEditUser] = useState({
 		name: '',
-		email: ''
+		email: '',
+		id: 0
 	});
 
 	return (
