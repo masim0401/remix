@@ -1,5 +1,3 @@
-// routes/users.tsx (или где у тебя определён маршрут)
-import { defer } from "@remix-run/node";
 import { Await, Link, useLoaderData } from "@remix-run/react";
 import { Suspense } from "react";
 

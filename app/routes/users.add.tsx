@@ -1,8 +1,8 @@
 import { ActionFunctionArgs, redirect } from "@remix-run/node";
 import { useActionData, useNavigation } from "@remix-run/react";
-import {BreadcrumbsItem} from "~/components/breadcrumbs/breadcrumbs-item";
-import UserForm from "~/features/users/form";
 import {data} from "@remix-run/router";
+import {BreadcrumbsItem} from "@components/breadcrumbs/breadcrumbs-item";
+import UserForm from "@features/users/form";
 
 export const handle = {
 	breadcrumb: () => <BreadcrumbsItem>Add</BreadcrumbsItem>,

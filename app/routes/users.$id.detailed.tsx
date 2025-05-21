@@ -1,9 +1,9 @@
 import { useLoaderData } from "@remix-run/react";
-import { json } from "@remix-run/node";
-import { BreadcrumbsItem } from "~/components/breadcrumbs/breadcrumbs-item";
+import {BreadcrumbsItem} from "@components/breadcrumbs/breadcrumbs-item";
+import {data} from "@remix-run/router";
 
 export const handle = {
-	breadcrumb: ({ params }: { params: { id: string } }) => (
+	breadcrumb: () => (
 		<BreadcrumbsItem>Detailed</BreadcrumbsItem>
 	),
 };
@@ -19,7 +19,7 @@ export async function loader({ params }: { params: { id: string } }) {
 	}
 
 	console.log("User data:", user);
-	return json(user);
+	return data(user);
 }
 
 export default function UserDetails() {

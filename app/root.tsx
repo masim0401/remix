@@ -4,9 +4,9 @@ import type {LinksFunction} from "@remix-run/node";
 
 import "./tailwind.css";
 import {Sidebar} from "./components/sidebar/sidebar";
-import {Breadcrumbs} from "./components/breadcrumbs/breadcrumbs";
 import {BreadcrumbsItem} from "./components/breadcrumbs/breadcrumbs-item";
-import {AppProvider} from "~/context/app-context";
+import {AppProvider} from "./context/app-context";
+import {Breadcrumbs} from "@components/breadcrumbs/breadcrumbs";
 
 export const handle = {
 	breadcrumb: () => <BreadcrumbsItem>Dashboard</BreadcrumbsItem>,

@@ -1,6 +1,6 @@
 import {Form, useParams} from "@remix-run/react";
-import {useAppContext} from "~/context/app-context";
 import {useEffect} from "react";
+import {useAppContext} from "@context/app-context";
 
 interface UserFormProps {
 	defaultName?: string;

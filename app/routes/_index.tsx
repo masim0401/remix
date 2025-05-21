@@ -1,6 +1,6 @@
-import { json } from "@remix-run/node";
 import {Link, useLoaderData} from "@remix-run/react";
-import {useAppContext} from "~/context/app-context";
+import {data} from "@remix-run/router";
+import {useAppContext} from "@context/app-context";
 
 export async function loader() {
   const res = await fetch("https://654ba4a15b38a59f28ef7233.mockapi.io/api/v1/users");
@@ -10,7 +10,7 @@ export async function loader() {
   }
   const users = await res.json();
   console.log("Fetched users:", users);
-  return json({ userCount: users.length });
+  return data({ userCount: users.length });
 }
 
 export default function Dashboard() {

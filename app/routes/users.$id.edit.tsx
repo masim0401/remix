@@ -1,9 +1,8 @@
 import {ActionFunctionArgs} from "@remix-run/node";
 import {useLoaderData, useActionData, useNavigation} from "@remix-run/react";
-import {BreadcrumbsItem} from "~/components/breadcrumbs/breadcrumbs-item";
-import UserForm from "~/features/users/form";
 import {data} from "@remix-run/router";
-import {useAppContext} from "~/context/app-context";
+import {BreadcrumbsItem} from "@components/breadcrumbs/breadcrumbs-item";
+import UserForm from "@features/users/form";
 
 interface ActionData {
 	error?: string;
